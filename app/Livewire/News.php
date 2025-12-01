@@ -22,7 +22,6 @@ class News extends Component
     public $title = '';
     public $description = '';
     public $date = '';
-    public $author = '';
     public $image = null;
     public $imagePreview = null;
 
@@ -70,7 +69,6 @@ class News extends Component
         $this->title = $news->title;
         $this->description = $news->description;
         $this->date = $news->date->format('Y-m-d');
-        $this->author = $news->author;
         $this->imagePreview = $news->image;
         $this->image = null;
         $this->isEditing = true;
@@ -109,7 +107,6 @@ class News extends Component
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string', 'min:10'],
             'date' => ['required', 'date'],
-            'author' => ['required', 'string', 'max:255'],
             'image' => ['required', 'image', 'max:5120'], // 5MB max
         ]);
 
@@ -135,7 +132,6 @@ class News extends Component
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string', 'min:10'],
             'date' => ['required', 'date'],
-            'author' => ['required', 'string', 'max:255'],
         ];
 
         if ($this->image) {
@@ -246,7 +242,6 @@ class News extends Component
         $this->title = '';
         $this->description = '';
         $this->date = '';
-        $this->author = '';
         $this->image = null;
         $this->imagePreview = null;
         $this->newsId = null;

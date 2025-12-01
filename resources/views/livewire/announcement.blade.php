@@ -16,7 +16,7 @@
         <flux:input
             wire:model.live="search"
             type="text"
-            placeholder="{{ __('Search by title or author...') }}"
+            placeholder="{{ __('Search by title...') }}"
             icon="magnifying-glass"
             clearable
         />
@@ -43,9 +43,6 @@
                                 </span>
                             @endif
                         </button>
-                    </th>
-                    <th class="px-6 py-3 text-left font-semibold text-neutral-900 dark:text-neutral-100">
-                        {{ __('Author') }}
                     </th>
                     <th class="px-6 py-3 text-left">
                         <button
@@ -77,9 +74,6 @@
                     <tr class="hover:bg-neutral-50 dark:hover:bg-neutral-800">
                         <td class="px-6 py-4">
                             <span class="font-medium text-neutral-900 dark:text-neutral-100">{{ $item->title }}</span>
-                        </td>
-                        <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">
-                            {{ $item->author }}
                         </td>
                         <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">
                             {{ $item->date->format('M d, Y') }}
@@ -161,14 +155,6 @@
                 type="text"
                 required
                 autofocus
-            />
-
-            <flux:input
-                wire:model="author"
-                :label="__('Author')"
-                type="text"
-                required
-                placeholder="{{ __('Author name') }}"
             />
 
             <flux:input

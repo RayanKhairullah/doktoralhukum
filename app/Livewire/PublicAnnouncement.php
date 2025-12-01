@@ -31,8 +31,7 @@ class PublicAnnouncement extends Component
     {
         return Announcement::query()
             ->when($this->search, function ($query) {
-                $query->where('title', 'like', '%' . $this->search . '%')
-                    ->orWhere('author', 'like', '%' . $this->search . '%');
+                $query->where('title', 'like', '%' . $this->search . '%');
             })
             ->orderBy($this->sortBy, $this->sortDirection)
             ->paginate(12);
